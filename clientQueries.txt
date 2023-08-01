@@ -1,0 +1,49 @@
+-----------------------------------------
+query getAllUsers{
+  usersdata{
+    id
+    firstName
+    email
+  }
+}
+-----------------------------------
+query getIndUser{
+   userdata(id:"202020"){
+    id
+		firstName
+    lastName
+    email
+  }
+}
+-----------------------------------
+query getIndUser($userId: ID!){
+   userdata(id:$userId){
+		firstName
+    lastName
+    email
+  }
+}
+---------------------------------
+query getAllQuotes{
+   userquotes{
+    by
+    name
+  }
+}
+-------------------------------------
+query getUserQuotes{
+  iquotes(by: "231231"){
+    by
+    name
+  }
+}
+----------------------------------------
+mutation createUser($newUser: UserInput!){
+  user: signupUser(newUser: $newUser){
+    id
+    firstName
+    lastName
+    email
+    password
+  }
+}
